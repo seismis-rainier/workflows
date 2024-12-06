@@ -1,0 +1,17 @@
+name: Reusable Print Username Workflow
+
+on:
+  workflow_call:
+    inputs:
+      username:
+        description: 'Username to print'
+        type: string
+        required: false
+        default: 'anupamas01'
+
+jobs:
+  print-username:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Specified Username
+        run: echo "${{ inputs.username }}"
